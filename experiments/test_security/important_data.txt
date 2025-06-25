@@ -1,0 +1,4 @@
+IMPORTANT DATA - DO NOT DELETE
+File: test_security/important_data.txt
+This file contains critical system data!
+==================================================
