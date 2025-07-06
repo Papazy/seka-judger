@@ -20,8 +20,8 @@ import glob
 @dataclass
 class JudgeResult:
   status: str
-  total_soal : int = 0
-  total_benar : int = 0
+  total_case : int = 0
+  total_case_benar : int = 0
   result : dict = None
   error_message: Optional[str] = None
 
@@ -46,8 +46,8 @@ class JudgeEngine:
       if not compilation_result.success:
         return JudgeResult(
           status="compile_error",
-          total_soal=0,
-          total_benar=0,
+          total_case=0,
+          total_case_benar=0,
           result=[],
           error_message=compilation_result.error_message
         )
@@ -92,14 +92,14 @@ class JudgeEngine:
       return {
         "status": "finished",
         "total_case": len(payload.test_cases),
-        "total_benar" : total_passed,
+        "total_case_benar" : total_passed,
         "results" : results
       }
     except Exception as e:
       return {
         "status": "system_error",
-        "total_soal": len(payload.test_cases),
-        "total_benar": 0,
+        "total_case": len(payload.test_cases),
+        "total_case_benar": 0,
         "results": [],
         "error_message": str(e)
       }
@@ -238,7 +238,7 @@ def judge_code(payload: JudgeRequest):
 #       "session_id": session_id,
 #       "status" : "finished",
 #       "total_case" : jumlah_soal,
-#       "total_benar" : jumlah_benar,
+#       "total_case_benar" : jumlah_benar,
 #       "results": results
 #   }
             

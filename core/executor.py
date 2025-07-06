@@ -12,7 +12,6 @@ class ExecutionResult:
   return_code: int = 0
   
 
-
 class CodeExecutor:
   def __init__(self, timeout: int=5):
     self.timeout = timeout

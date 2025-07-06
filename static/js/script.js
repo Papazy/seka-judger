@@ -259,7 +259,7 @@ function displayResults(result) {
       <h3 class="font-bold text-lg">Results Summary</h3>
       <p>Status: <span class="font-semibold">${result.status}</span></p>
       <p>Total Test Cases: <span class="font-semibold">${result.total_case}</span></p>
-      <p>Passed: <span class="font-semibold text-green-600">${result.total_benar}</span></p>
+      <p>Passed: <span class="font-semibold text-green-600">${result.total_case_benar}</span></p>
     </div>
     <div class="test-results">
   `;

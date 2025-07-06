@@ -24,8 +24,8 @@ class TestJudgeEndpoint:
         
         data = response.json()
         assert data["status"] == "finished"
-        assert data["total_soal"] == 3
-        assert data["total_benar"] == 3
+        assert data["total_case"] == 3
+        assert data["total_case_benar"] == 3
         assert len(data["results"]) == 3
         
         for result in data["results"]:
@@ -103,8 +103,8 @@ class TestJudgeEndpoint:
         
         data = response.json()
         assert data["status"] == "finished"
-        assert data["total_soal"] == 1
-        assert data["total_benar"] == 0
+        assert data["total_case"] == 1
+        assert data["total_case_benar"] == 0
         assert data["results"][0]["status"] == "failed"
         assert data["results"][0]["passed"] == False
         assert data["results"][0]["actual_output"] == "6"
@@ -127,15 +127,17 @@ class TestJudgeEndpoint:
         
         data = response.json()
         assert data["status"] == "finished"
-        assert data["total_soal"] == 3
-        assert data["total_benar"] == 3
+        assert data["total_case"] == 3
+        assert data["total_case_benar"] == 3
     
     def test_empty_test_cases(self):
         """Test with empty test cases list"""
         payload = {
             "code": "#include <stdio.h>\nint main() { return 0; }",
             "language": "c",
-            "test_cases": []
+            "test_cases": [
+                {"input": "2", "expected_output": "4"},
+            ]
         }
         
         response = client.post("/judge", json=payload)
@@ -143,8 +145,8 @@ class TestJudgeEndpoint:
         
         data = response.json()
         assert data["status"] == "finished"
-        assert data["total_soal"] == 0
-        assert data["total_benar"] == 0
+        assert data["total_case"] == 0
+        assert data["total_case_benar"] == 0
         assert len(data["results"]) == 0
 
     def test_cpp_language(self):
