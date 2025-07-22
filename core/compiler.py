@@ -157,7 +157,7 @@ class PythonCompiler(BaseCompiler):
 class CompilerFactory:
   @staticmethod
   def get_compiler(language: str) -> BaseCompiler:
-    if language in ["c", "cpp"]:
+    if language in ["c", "cpp", "c++"]:
       print('Get CCompiler')
       return CCompiler(language)
     elif language == "java":
