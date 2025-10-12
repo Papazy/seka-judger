@@ -155,3 +155,5 @@ logs/
 *.jar
 testcases/
 solutions/
+
+testing/

@@ -1,0 +1,8 @@
+total 32
+drwx------@   7 fajryariansyah  staff   224 Oct 11 22:27 .
+drwx------@ 253 fajryariansyah  staff  8096 Oct 11 22:27 ..
+-rw-r--r--    1 fajryariansyah  staff     0 Oct 11 22:27 error.txt
+-rw-r--r--@   1 fajryariansyah  staff     4 Oct 11 22:27 input_data.txt
+-rw-r--r--@   1 fajryariansyah  staff    45 Oct 11 22:27 main.py
+-rw-r--r--    1 fajryariansyah  staff    19 Oct 11 22:27 metrics.txt
+-rw-r--r--    1 fajryariansyah  staff     3 Oct 11 22:27 output.txt
