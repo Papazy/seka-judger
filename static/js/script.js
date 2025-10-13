@@ -193,7 +193,7 @@ async function sendCodeToJudge(){
     // Tampilkan loading state
     loadingInterval = showLoadingState();
 
-    const response = await fetch("/judge", {
+    const response = await fetch("/v2/judge", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

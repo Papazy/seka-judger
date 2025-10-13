@@ -12,7 +12,9 @@ fi
 
 # Jika dicompile, dan hasilnya ada, berarti cuman warning
 if [ -f /code/compile_error.txt ]; then
-        echo "COMPILE_WARNING" > /code/status.txt 
+    if [ -f /code/a.out ]; then
+        echo "COMPILE_WARNING" > /code/status.txt
+    fi
 fi
 
 #run
