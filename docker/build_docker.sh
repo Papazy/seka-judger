@@ -9,7 +9,7 @@ if [ "$1" == "--no-cache" ]; then
     echo "Building with --no-cache flag..."
 fi
 
-docker buildx build $NO_CACHE -f python_runner.dockerfile -t seka-python-runner:latest .
+docker buildx build $NO_CACHE --platform $PLATFORM -f python_runner.dockerfile -t seka-python-runner:latest .
 docker buildx build $NO_CACHE --platform $PLATFORM -f c_runner.dockerfile -t seka-c-runner:latest .
 docker buildx build $NO_CACHE --platform $PLATFORM -f cpp_runner.dockerfile -t seka-cpp-runner:latest .
-docker buildx build $NO_CACHE -f java_runner.dockerfile -t seka-java-runner:latest .
+docker buildx build $NO_CACHE --platform $PLATFORM -f java_runner.dockerfile -t seka-java-runner:latest .
