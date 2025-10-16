@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y time && rm -rf /var/lib/apt/lists/*
 RUN useradd -m runner
 RUN mkdir /code
 RUN chown -R runner:runner /code
+RUN chmod 777 /code
+
 WORKDIR /code
 
 # copy script & beri izin eksekusi (sebagai root)
