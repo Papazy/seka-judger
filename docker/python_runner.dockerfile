@@ -15,7 +15,6 @@ WORKDIR /code
 COPY bash/run_python_code.sh /run_python_code.sh
 RUN chmod +x /run_python_code.sh
 
-# baru pindah ke user non-root
-USER runner
+
 
 ENTRYPOINT ["/run_python_code.sh"]

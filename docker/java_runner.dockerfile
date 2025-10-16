@@ -12,6 +12,5 @@ WORKDIR /code
 COPY bash/run_java_code.sh /run_java_code.sh
 RUN chmod +x /run_java_code.sh
 
-USER runner
 
 ENTRYPOINT ["/run_java_code.sh"]

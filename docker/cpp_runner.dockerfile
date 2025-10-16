@@ -12,6 +12,5 @@ WORKDIR /code
 COPY bash/run_cpp_code.sh /run_cpp_code.sh
 RUN chmod +x /run_cpp_code.sh
 
-USER runner
 
 ENTRYPOINT [ "/run_cpp_code.sh" ]
