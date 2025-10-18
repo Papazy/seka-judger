@@ -23,8 +23,6 @@ class Verdict(str, Enum):
 class TestCase(BaseModel):
   input: str
   expected_output: str
-  time_limit_ms: Optional[float] = 1000  # Default 1 second
-  memory_limit_kb: Optional[float] = 256000  # Default 256 MB
   
 class JudgeRequest(BaseModel):
   code: str
